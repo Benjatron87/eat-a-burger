@@ -1,0 +1,20 @@
+#on-plate{
+    float: left;
+    margin-left: 300px;
+}
+
+#devoured{
+    float: right;
+    margin-right: 300px;
+}
+
+#add{
+    margin-top: 50px;
+    margin-left: 43%;
+    margin-right: 43%;
+}
+
+#header{
+    margin-left: 43%;
+    margin-right: 43%;
+}
