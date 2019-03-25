@@ -9,7 +9,7 @@
     <div class="form-group">
         <input type="text" id="new-burger" name="name">
 
-        <div id="added">Add</div>
+        <button id="added">Add</button>
         <div id="err"></div>
     </div>
     </form>
@@ -20,24 +20,31 @@
 <div id="on-plate">
     <h2>On Your Plate:</h2>
 
-    <ul>
+    <ol>
     {{#each burgers}}
         {{#unless devoured}}
-        {{> burgers/burgers devoured=true}}
+            <li>
+	            <div class="on-plate">{{name}}
+	            <button class="change-devour" data-id="{{id}}" data-devour="{{devour}}">Devour!
+	             </button>
+                 </div>
+            </li>
         {{/unless}}
     {{/each}}
-    </ul>
+    </ol>
 </div>
 
 <div id="devoured">
 
     <h2>Devoured:</h2>
 
-    <ul>
+    <ol>
     {{#each burgers}}
         {{#if devoured}}
-            {{burgers/devoured}}
+            <li>
+	            <div class="devour">{{name}}</div>
+            </li>
         {{/if}}
     {{/each}}
-    </ul>
+    </ol>
 </div>

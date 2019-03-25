@@ -33,3 +33,9 @@ body{
 #err{
     color: red;
 }
+
+.devour, .on-plate{
+    margin: 5px;
+    padding: 10px;
+    background: #ffd857;
+}

@@ -5,6 +5,7 @@ $("#added").unbind().on("click", function(event) {
 
     let burger = {
         name: $("#new-burger").val().trim(),
+        devoured: 0
     };
     console.log(burger)
 
@@ -28,15 +29,15 @@ $(".change-devour").on("click", function() {
     const id = $(this).data("id");
 
     const newDevour = {
-    devoured: 1
+    devoured: true
     };
 
     $.ajax("/api/burgers/" + id, {
     type: "PUT",
     data: newDevour
     }).then(() => {
-    console.log("burger state changed");
-    
     location.reload();
+
+    console.log("burger state changed");
     });
 });
