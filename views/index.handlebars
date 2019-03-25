@@ -1,15 +1,13 @@
 <div id="header">
-    <h1>Burgers!</h1>
-    <img src="../public/assets/img/burger.png">
 </div>
 
 <div id="on-plate">
     <h2>On Your Plate:</h2>
 
     <ul>
-    {{#each cats}}
-        {{#unless sleepy}}
-        {{> cats/cat-block sleep=true}}
+    {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true}}
         {{/unless}}
     {{/each}}
     </ul>
@@ -22,7 +20,7 @@
     <ul>
     {{#each burgers}}
         {{#if devoured}}
-        {{> cats/cat-block sleep=false}}
+        {{> burgers/burger-block devoured=false}}
         {{/if}}
     {{/each}}
     </ul>
@@ -36,9 +34,9 @@
     <form class="create-form">
 
     <div class="form-group">
-        <input type="text" id="ca" name="name">
+        <input type="text" id="new-burger" name="name">
     </div>
 
-    <button type="submit">Add</button>
+    <button id="add-button" type="submit">Add</button>
     </form>
 </div>

@@ -1,3 +1,6 @@
+body{
+    background-color: #fee699;
+}
 #on-plate{
     float: left;
     margin-left: 300px;
@@ -15,6 +18,11 @@
 }
 
 #header{
-    margin-left: 43%;
-    margin-right: 43%;
+    margin-left: 33%;
+    margin-right: 33%;
+    height: 250px;
+    width: 400px;
+    background-image: url("../img/burger.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
