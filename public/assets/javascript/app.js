@@ -1,37 +1,35 @@
-$(function() {
-    $(".change-devour").on("click", function() {
-      const id = $(this).data("id");
-      const devour = $(this).data("devour");
-  
-      const newDevour = {
-        devoured: devour
-      };
-  
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-        data: newDevour
-      }).then(() => {
-        console.log("burger state changed");
-        
-        location.reload();
-      });
-    });
-  
-    $("#add-button").on("submit", function(event) {
-      event.preventDefault();
-  
-      const burger = {
+console.log("connected to js")
+
+$("#added").unbind().on("click", function(event) {
+    event.preventDefault();
+
+    const burger = {
         name: $("#new-burger").val().trim(),
         devoured: false
-      };
-  
-      $.ajax("/api/burgers", {
+    };
+    console.log(burger)
+
+    $.ajax("/api/burgers/", {
         type: "POST",
         data: burger
-      }).then(() => {
+    }).then(() => {
         console.log("created new burger");
-      
-        location.reload();
-      });
+    });
+    });
+
+$(".change-devour").on("click", function() {
+    const id = $(this).data("id");
+
+    const newDevour = {
+    devoured: true
+    };
+
+    $.ajax("/api/burgers/" + id, {
+    type: "PUT",
+    data: newDevour
+    }).then(() => {
+    console.log("burger state changed");
+    
+    location.reload();
     });
 });
