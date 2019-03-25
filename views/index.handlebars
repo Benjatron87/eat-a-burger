@@ -23,12 +23,10 @@
     <ol>
     {{#each burgers}}
         {{#unless devoured}}
-            <li>
-	            <div class="on-plate">{{name}}
+	            <div class="on-plate">{{id}}. {{name}}
 	            <button class="change-devour" data-id="{{id}}" data-devour="{{devour}}">Devour!
 	             </button>
                  </div>
-            </li>
         {{/unless}}
     {{/each}}
     </ol>
@@ -41,9 +39,7 @@
     <ol>
     {{#each burgers}}
         {{#if devoured}}
-            <li>
-	            <div class="devour">{{name}}</div>
-            </li>
+	            <div class="devour">{{id}}. {{name}}</div>
         {{/if}}
     {{/each}}
     </ol>
