@@ -1,6 +1,22 @@
 <div id="header">
 </div>
 
+<div id="add">
+
+    <h2>Add a Burger:</h2>
+    <form class="create-form">
+
+    <div class="form-group">
+        <input type="text" id="new-burger" name="name">
+
+        <div id="added">Add</div>
+        <div id="err"></div>
+    </div>
+    </form>
+</div>
+
+<br>
+
 <div id="on-plate">
     <h2>On Your Plate:</h2>
 
@@ -20,23 +36,8 @@
     <ul>
     {{#each burgers}}
         {{#if devoured}}
-        {{> burgers/burgers devoured=false}}
+            {{burgers/devoured}}
         {{/if}}
     {{/each}}
     </ul>
-</div>
-
-<br>
-
-<div id="add">
-
-    <h2>Add a Burger:</h2>
-    <form class="create-form">
-
-    <div class="form-group">
-        <input type="text" id="new-burger" name="name">
-
-        <div id="added">Add</div>
-    </div>
-    </form>
 </div>

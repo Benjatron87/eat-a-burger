@@ -3,25 +3,32 @@ console.log("connected to js")
 $("#added").unbind().on("click", function(event) {
     event.preventDefault();
 
-    const burger = {
+    let burger = {
         name: $("#new-burger").val().trim(),
-        devoured: false
     };
     console.log(burger)
 
-    $.ajax("/api/burgers/", {
-        type: "POST",
-        data: burger
-    }).then(() => {
-        console.log("created new burger");
-    });
-    });
+    if(burger.name){
+        $.ajax("/api/burgers/", {
+            type: "POST",
+            data: burger
+        }).then(() => {
+            console.log("created new burger");
+
+            location.reload();
+        });
+        $("#err").text("")
+    }
+    else{
+        $("#err").text("Can't Leave This Blank!")
+    }
+});
 
 $(".change-devour").on("click", function() {
     const id = $(this).data("id");
 
     const newDevour = {
-    devoured: true
+    devoured: 1
     };
 
     $.ajax("/api/burgers/" + id, {
